@@ -55,7 +55,6 @@ sudo apt-get -y install valgrind doxygen doxygen-gui\
 
 ################################################################################
 #Only for Gnome
-sudo apt-get install chrome-gnome-shell
 
 #Gnome Shell Extension Installer
 wget -O gnome-shell-extension-installer "https://github.com/ianbrunelli/gnome-shell-extension-installer/raw/master/gnome-shell-extension-installer"
