@@ -1,4 +1,26 @@
 #!/bin/bash
+################################################################################
+
+#   Copyright (C) 2016 Fabrizio Cirelli
+
+#   This program is free software: you can redistribute it and/or modify
+#   it under the terms of the GNU General Public License as published by
+#   the Free Software Foundation, either version 3 of the License, or
+#   (at your option) any later version.
+#
+#   This program is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#   GNU General Public License for more details.
+
+#   You should have received a copy of the GNU General Public License
+#   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+echo	first-boot.sh
+echo	Copyright \(C\) 2016 Fabrizio Cirelli
+echo	This program comes with ABSOLUTELY NO WARRANTY
+echo    This is free software, and you are welcome to redistribute it
+echo    under certain conditions
 
 ################################################################################
 # add repos
@@ -53,6 +75,13 @@ gnome-shell-extension-installer 683 3.12 --yes
 #Battery Percentage
 gnome-shell-extension-installer 818 3.12 --yes
 
+################################################################################
+#Start at boot applications
+#touch ~/.config/autostart/scudcloud.desktop
+#echo [Desktop Entry] > ~/.config/autostart/scudcloud.desktop
+#echo Name=scudcloud > ~/.config/autostart/scudcloud.desktop
+#echo Exec=scudcloud --minimize MINIMIZE > ~/.config/autostart/scudcloud.desktop
+#echo Type=Application> ~/.config/autostart/scudcloud.desktop
 
 
 
