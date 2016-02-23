@@ -85,8 +85,6 @@ gnome-shell-extension-installer 818 3.12 --yes
 sudo apt-get install -y ubuntu-restricted-extras
 sudo apt-get install -y steam
 
-google-chrome https://slack.com/downloads
-
 ################################################################################
 # prompt for a reboot
 clear
