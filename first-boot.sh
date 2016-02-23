@@ -36,10 +36,6 @@ sudo add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -sc) pa
 #scudcloud / slack
 sudo apt-add-repository -y ppa:rael-gc/scudcloud
 
-#Only for Gnome
-sudo add-apt-repository -y ppa:ne0sight/chrome-gnome-shell
-
-
 ################################################################################
 # basic update
 sudo apt-get -y --force-yes update
