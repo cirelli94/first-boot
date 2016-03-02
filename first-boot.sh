@@ -24,17 +24,18 @@ echo    under certain conditions
 
 ################################################################################
 # add repos
-
+wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo add-apt-repository -y "deb http://dl.google.com/linux/chrome/deb/ stable main"
-#sudo add-apt-repository -y ppa:freyja-dev/unity-tweak-tool-daily
-sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
 
 #skype
 sudo dpkg --add-architecture i386
-sudo add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
+sudo add-apt-repository -y "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
 
 #scudcloud / slack
 sudo apt-add-repository -y ppa:rael-gc/scudcloud
+
+#picard from musicBrainz
+sudo add-apt-repository -y ppa:musicbrainz-developers/stable
 
 ################################################################################
 # basic update
@@ -43,32 +44,47 @@ sudo apt-get -y --force-yes upgrade
 
 ###############################################################################
 # install apps
-sudo apt-get -y install valgrind doxygen doxygen-gui\
-    eclipse openjdk-8-jdk \
-    git pitivi deluge unetbootin\
-    virtualbox virtualbox-guest-additions-iso\
-    gimp p7zip p7zip-full p7zip-rar \
-    indicator-multiload curl gparted dkms google-chrome-stable \
-    ubuntu-wallpapers*  \
-    linux-headers-generic\
-    skype vlc flashplugin-installer laptop-mode-tools
+sudo apt-get -y install  \
+	doxygen doxygen-gui deluge \
+    eclipse \
+    laptop-mode-tools \
+    
+    flashplugin-installer \
+    git gimp gparted google-chrome-stable \
+    openjdk-8-jdk \
+    picard pitivi \
+	p7zip p7zip-full p7zip-rar \
+    scudcloud skype \
+    unetbootin ubuntu-wallpapers*  \
+    virtualbox virtualbox-guest-additions-iso \
+    vlc valgrind \
+
+# Utili???
+#	linux-headers-generic\
 
 ################################################################################
 #Only for Gnome
+# gnome-shell --version
 
+echo ""
+echo "===================="
+echo " GNOME 3.18 ONLY!!! "
+echo "===================="
+echo ""
+ 
 #Gnome Shell Extension Installer
 wget -O gnome-shell-extension-installer "https://github.com/ianbrunelli/gnome-shell-extension-installer/raw/master/gnome-shell-extension-installer"
 chmod +x gnome-shell-extension-installer
 mv gnome-shell-extension-installer /usr/bin/
 
 #topicons plus
-gnome-shell-extension-installer 1031 3.12 --yes
+gnome-shell-extension-installer 1031 3.18 --yes
 
 #Imgur Screenshot Uploader
-gnome-shell-extension-installer 683 3.12 --yes
+gnome-shell-extension-installer 683 3.18 --yes
 
 #Battery Percentage
-gnome-shell-extension-installer 818 3.12 --yes
+gnome-shell-extension-installer 818 3.18 --yes
 
 ################################################################################
 #Start at boot applications
