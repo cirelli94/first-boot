@@ -25,7 +25,7 @@ echo    under certain conditions
 ################################################################################
 # add repos
 wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-sudo add-apt-repository -y "deb http://dl.google.com/linux/chrome/deb/ stable main"
+sudo add-apt-repository -y "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
 
 #skype
 sudo dpkg --add-architecture i386
