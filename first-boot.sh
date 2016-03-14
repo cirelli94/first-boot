@@ -37,6 +37,13 @@ sudo apt-add-repository -y ppa:rael-gc/scudcloud
 #picard from musicBrainz
 sudo add-apt-repository -y ppa:musicbrainz-developers/stable
 
+#syncthing
+# Add the release PGP keys:
+curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
+
+# Add the "release" channel to your APT sources:
+echo "deb http://apt.syncthing.net/ syncthing release" | sudo tee /etc/apt/sources.list.d/syncthing.list
+
 ################################################################################
 # basic update
 sudo apt-get -y --force-yes update
@@ -48,13 +55,12 @@ sudo apt-get -y install  \
 	doxygen doxygen-gui deluge \
     eclipse \
     laptop-mode-tools \
-    
     flashplugin-installer \
     git gimp gparted google-chrome-stable \
     openjdk-8-jdk \
     picard pitivi \
 	p7zip p7zip-full p7zip-rar \
-    scudcloud skype \
+    scudcloud skype syncthing\
     unetbootin ubuntu-wallpapers*  \
     virtualbox virtualbox-guest-additions-iso \
     vlc valgrind \
@@ -94,8 +100,6 @@ gnome-shell-extension-installer 818 3.18 --yes
 #echo Exec=scudcloud --minimize MINIMIZE > ~/.config/autostart/scudcloud.desktop
 #echo Type=Application> ~/.config/autostart/scudcloud.desktop
 
-
-
 ################################################################################
 # requires clicks
 sudo apt-get install -y ubuntu-restricted-extras
@@ -103,7 +107,7 @@ sudo apt-get install -y steam
 
 ################################################################################
 # prompt for a reboot
-clear
+
 echo ""
 echo "===================="
 echo " TIME FOR A REBOOT! "
