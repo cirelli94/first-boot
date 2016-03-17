@@ -40,7 +40,6 @@ sudo add-apt-repository -y ppa:musicbrainz-developers/stable
 #syncthing
 # Add the release PGP keys:
 curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
-
 # Add the "release" channel to your APT sources:
 echo "deb http://apt.syncthing.net/ syncthing release" | sudo tee /etc/apt/sources.list.d/syncthing.list
 
@@ -65,8 +64,11 @@ sudo apt-get -y install  \
     virtualbox virtualbox-guest-additions-iso \
     vlc valgrind \
 
-# Utili???
-#	linux-headers-generic\
+################################################################################
+# atom editor from Github https://atom.io/
+cd /tmp
+wget https://atom.io/download/deb -O atom.deb
+sudo dpkg -i atom.deb
 
 ################################################################################
 #Only for Gnome
