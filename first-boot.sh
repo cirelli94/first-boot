@@ -24,6 +24,11 @@ echo    under certain conditions
 
 ################################################################################
 # add repos
+
+#atom
+sudo add-apt-repository ppa:webupd8team/atom
+
+#google-chrome-stable
 wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo add-apt-repository -y "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
 
@@ -56,6 +61,7 @@ sudo apt-get -y --force-yes upgrade
 ###############################################################################
 # install apps
 sudo apt-get -y install  \
+	atom \
 	doxygen doxygen-gui deluge \
     eclipse \
     laptop-mode-tools \
