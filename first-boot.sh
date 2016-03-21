@@ -47,7 +47,7 @@ echo "deb http://apt.syncthing.net/ syncthing release" | sudo tee /etc/apt/sourc
 # remove useless programs
 sudo apt-get remove -y \
 	firefox imagemagick
-	
+
 ################################################################################
 # basic update
 sudo apt-get -y --force-yes update
@@ -67,13 +67,7 @@ sudo apt-get -y install  \
     scudcloud skype syncthing\
     unetbootin ubuntu-wallpapers*  \
     virtualbox virtualbox-guest-additions-iso \
-    vlc valgrind \
-
-################################################################################
-# atom editor from Github https://atom.io/
-cd /tmp
-wget https://atom.io/download/deb -O atom.deb
-sudo dpkg -i atom.deb
+    vlc valgrind
 
 ################################################################################
 #Only for Gnome
@@ -84,7 +78,7 @@ echo "===================="
 echo " GNOME 3.18 ONLY!!! "
 echo "===================="
 echo ""
- 
+
 #Gnome Shell Extension Installer
 wget -O gnome-shell-extension-installer "https://github.com/ianbrunelli/gnome-shell-extension-installer/raw/master/gnome-shell-extension-installer"
 chmod +x gnome-shell-extension-installer
@@ -120,4 +114,3 @@ echo "===================="
 echo " TIME FOR A REBOOT! "
 echo "===================="
 echo ""
-
