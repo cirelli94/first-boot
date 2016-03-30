@@ -28,6 +28,9 @@ echo    under certain conditions
 #atom
 sudo add-apt-repository ppa:webupd8team/atom
 
+#flux
+sudo add-apt-repository ppa:nathan-renniewaldock/flux
+
 #google-chrome-stable
 wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo add-apt-repository -y "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
@@ -65,7 +68,7 @@ sudo apt-get -y install  \
 	doxygen doxygen-gui deluge \
     eclipse \
     laptop-mode-tools \
-    flashplugin-installer \
+    flashplugin-installer fluxgui \
     git gimp gparted google-chrome-stable \
     openjdk-8-jdk \
     picard pitivi \
