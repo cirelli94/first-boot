@@ -69,17 +69,17 @@ sudo apt-get -y --force-yes upgrade
 sudo apt-get -y install  \
 	atom \
 	doxygen doxygen-gui deluge \
-    eclipse \
-    laptop-mode-tools \
-    flashplugin-installer fluxgui \
-    git gimp gparted google-chrome-stable \
-    openjdk-8-jdk \
-    picard pitivi \
+	eclipse \
+ 	laptop-mode-tools \
+ 	flashplugin-installer fluxgui \
+ 	git gimp gparted google-chrome-stable \
+ 	openjdk-8-jdk \
+ 	picard pitivi python-nautilus \
 	p7zip p7zip-full p7zip-rar \
-    scudcloud skype syncthing syncthing-gtk\
-    unetbootin ubuntu-wallpapers*  \
-    virtualbox virtualbox-guest-additions-iso \
-    vlc valgrind
+ 	scudcloud skype syncthing syncthing-gtk\
+   unetbootin ubuntu-wallpapers*  \
+   virtualbox virtualbox-guest-additions-iso \
+   vlc valgrind
 
 ################################################################################
 #Only for Gnome
