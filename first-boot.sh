@@ -35,6 +35,9 @@ sudo add-apt-repository ppa:nathan-renniewaldock/flux
 wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo add-apt-repository -y "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
 
+#syncthing-gtk
+sudo add-apt-repository ppa:nilarimogard/webupd8
+
 #skype
 sudo dpkg --add-architecture i386
 sudo add-apt-repository -y "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
@@ -73,7 +76,7 @@ sudo apt-get -y install  \
     openjdk-8-jdk \
     picard pitivi \
 	p7zip p7zip-full p7zip-rar \
-    scudcloud skype syncthing\
+    scudcloud skype syncthing syncthing-gtk\
     unetbootin ubuntu-wallpapers*  \
     virtualbox virtualbox-guest-additions-iso \
     vlc valgrind
