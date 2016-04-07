@@ -114,6 +114,10 @@ gnome-shell-extension-installer 818 3.18 --yes
 #echo Type=Application> ~/.config/autostart/scudcloud.desktop
 
 ################################################################################
+# Alias
+alias meteo='curl http://wttr.in/albino'
+
+################################################################################
 # requires clicks
 sudo apt-get install -y ubuntu-restricted-extras
 sudo apt-get install -y steam
