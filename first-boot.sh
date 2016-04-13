@@ -77,10 +77,12 @@ sudo apt-get -y install  \
  	picard pitivi python-nautilus \
 	p7zip p7zip-full p7zip-rar \
  	scudcloud skype syncthing syncthing-gtk\
-   unetbootin ubuntu-wallpapers*  \
-   virtualbox virtualbox-guest-additions-iso \
-   vlc valgrind
+	umake unetbootin ubuntu-wallpapers*  \
+	virtualbox-guest-additions-iso \
+	vlc valgrind
 
+# android-studio
+sudo umake android-studio
 ################################################################################
 #Only for Gnome
 # gnome-shell --version
