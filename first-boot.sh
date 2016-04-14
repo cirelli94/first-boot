@@ -70,20 +70,24 @@ sudo apt-get -y install  \
 	atom \
 	doxygen doxygen-gui deluge \
 	eclipse \
- 	laptop-mode-tools \
- 	flashplugin-installer fluxgui \
- 	git gimp gparted google-chrome-stable \
- 	openjdk-8-jdk \
- 	picard pitivi python-nautilus \
+	flashplugin-installer fluxgui \
+	git gimp gparted google-chrome-stable \
+	openjdk-8-jdk \
+	picard pitivi python-nautilus \
+	powertop \
 	p7zip p7zip-full p7zip-rar \
- 	scudcloud skype syncthing syncthing-gtk\
+	scudcloud skype syncthing syncthing-gtk\
 	umake unetbootin ubuntu-wallpapers*  \
 	virtualbox-guest-additions-iso \
-	vlc valgrind
+	vlc valgrind \
+	# TLP - ADVANCED POWER MANAGEMENT
+	# http://linrunner.de/en/tlp/docs/tlp-linux-advanced-power-management.html
+	tlp tlp-rdw smartmontools ethtool
 
 # android-studio
 sudo umake android-studio
 ################################################################################
+
 #Only for Gnome
 # gnome-shell --version
 
