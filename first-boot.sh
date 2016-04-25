@@ -1,5 +1,10 @@
 #!/bin/bash
 ################################################################################
+# TODO:
+# AGGIUNGI uso di powertop
+# aggiungi uso di grub (dopo aver fatto backup)
+# aggiungi pm-utils e hibernate!
+################################################################################
 
 #   Copyright (C) 2016 Fabrizio Cirelli
 
@@ -78,7 +83,7 @@ sudo apt-get -y install  \
 	p7zip p7zip-full p7zip-rar \
 	scudcloud skype syncthing syncthing-gtk\
 	umake unetbootin ubuntu-wallpapers*  \
-	virtualbox-guest-additions-iso \
+	variety virtualbox-guest-additions-iso \
 	vlc valgrind \
 	# TLP - ADVANCED POWER MANAGEMENT
 	# http://linrunner.de/en/tlp/docs/tlp-linux-advanced-power-management.html
