@@ -1,4 +1,4 @@
-#!/bin/bash
+co#!/bin/bash
 ################################################################################
 # TODO:
 # AGGIUNGI uso di powertop
@@ -63,7 +63,7 @@ echo "deb http://apt.syncthing.net/ syncthing release" | sudo tee /etc/apt/sourc
 ################################################################################
 # remove useless programs
 sudo apt-get remove -y \
-	firefox imagemagick
+	firefox
 
 ################################################################################
 # basic update
