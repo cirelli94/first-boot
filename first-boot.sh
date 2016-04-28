@@ -4,6 +4,7 @@
 # AGGIUNGI uso di powertop
 # aggiungi uso di grub (dopo aver fatto backup)
 # aggiungi pm-utils e hibernate!
+# YAKUAKE!!!
 ################################################################################
 
 #   Copyright (C) 2016 Fabrizio Cirelli
