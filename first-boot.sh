@@ -1,10 +1,9 @@
-co#!/bin/bash
+#!/bin/bash
 ################################################################################
 # TODO:
 # AGGIUNGI uso di powertop
-# aggiungi uso di grub (dopo aver fatto backup)
 # aggiungi pm-utils e hibernate!
-# YAKUAKE!!!
+
 ################################################################################
 
 #   Copyright (C) 2016 Fabrizio Cirelli
@@ -25,8 +24,13 @@ co#!/bin/bash
 echo	first-boot.sh
 echo	Copyright \(C\) 2016 Fabrizio Cirelli
 echo	This program comes with ABSOLUTELY NO WARRANTY
-echo    This is free software, and you are welcome to redistribute it
-echo    under certain conditions
+echo	This is free software, and you are welcome to redistribute it
+echo	under certain conditions
+################################################################################
+# TODO aggiungi uso di grub (dopo aver fatto backup)
+
+# copy actual version of grub file configuration
+#sudo cp /etc/default/grub /etc/default/grub.old
 
 ################################################################################
 # add repos
@@ -60,10 +64,13 @@ curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
 # Add the "release" channel to your APT sources:
 echo "deb http://apt.syncthing.net/ syncthing release" | sudo tee /etc/apt/sources.list.d/syncthing.list
 
+# GNOME Shell Integration
+sudo add-apt-repository ppa:ne0sight/chrome-gnome-shell
+
+
 ################################################################################
 # remove useless programs
-sudo apt-get remove -y \
-	firefox
+# sudo apt-get remove -y
 
 ################################################################################
 # basic update
@@ -74,6 +81,7 @@ sudo apt-get -y --force-yes upgrade
 # install apps
 sudo apt-get -y install  \
 	atom \
+	chrome-gnome-shell \
 	doxygen doxygen-gui deluge \
 	eclipse \
 	flashplugin-installer fluxgui \
@@ -86,6 +94,7 @@ sudo apt-get -y install  \
 	umake unetbootin ubuntu-wallpapers*  \
 	variety virtualbox-guest-additions-iso \
 	vlc valgrind \
+	yakuake \
 	# TLP - ADVANCED POWER MANAGEMENT
 	# http://linrunner.de/en/tlp/docs/tlp-linux-advanced-power-management.html
 	tlp tlp-rdw smartmontools ethtool
