@@ -108,7 +108,7 @@ sudo umake android-studio
 
 echo ""
 echo "===================="
-echo " GNOME 3.18 ONLY!!! "
+echo " GNOME 3.20 ONLY!!! "
 echo "===================="
 echo ""
 
@@ -118,13 +118,13 @@ chmod +x gnome-shell-extension-installer
 mv gnome-shell-extension-installer /usr/bin/
 
 #topicons plus
-gnome-shell-extension-installer 1031 3.18 --yes
+gnome-shell-extension-installer 1031 3.20 --yes
 
 #Imgur Screenshot Uploader
-gnome-shell-extension-installer 683 3.18 --yes
+gnome-shell-extension-installer 683 3.20 --yes
 
 #Battery Percentage
-gnome-shell-extension-installer 818 3.18 --yes
+gnome-shell-extension-installer 818 3.20 --yes
 
 ################################################################################
 #Start at boot applications
@@ -135,8 +135,12 @@ gnome-shell-extension-installer 818 3.18 --yes
 #echo Type=Application> ~/.config/autostart/scudcloud.desktop
 
 ################################################################################
-# Alias
-alias meteo='curl http://wttr.in/albino'
+# Permanent bash aliases
+
+echo "" >> ~/.bashrc
+echo "# Alias" >> ~/.bashrc
+echo "alias meteo='curl http://wttr.in/albino'" >> ~/.bashrc
+
 
 ################################################################################
 # requires clicks
