@@ -3,6 +3,7 @@
 # TODO:
 # AGGIUNGI uso di powertop
 # aggiungi pm-utils e hibernate!
+# riconoscimento automatico gnome version
 
 ################################################################################
 
@@ -113,18 +114,30 @@ echo "===================="
 echo ""
 
 #Gnome Shell Extension Installer
+# https://github.com/ianbrunelli/gnome-shell-extension-installer
 wget -O gnome-shell-extension-installer "https://github.com/ianbrunelli/gnome-shell-extension-installer/raw/master/gnome-shell-extension-installer"
 chmod +x gnome-shell-extension-installer
 mv gnome-shell-extension-installer /usr/bin/
 
 #topicons plus
-gnome-shell-extension-installer 1031 3.20 --yes
+gnome-shell-extension-installer 1031 --yes
 
 #Imgur Screenshot Uploader
-gnome-shell-extension-installer 683 3.20 --yes
+gnome-shell-extension-installer 683 --yes
 
 #Battery Percentage
-gnome-shell-extension-installer 818 3.20 --yes
+gnome-shell-extension-installer 818 --yes
+
+# Cpu Power Manager
+gnome-shell-extension-installer 945 --yes
+
+# Shellshape
+gnome-shell-extension-installer 294 --yes
+
+# User Themes
+gnome-shell-extension-installer 19 --yes
+
+
 
 ################################################################################
 #Start at boot applications
