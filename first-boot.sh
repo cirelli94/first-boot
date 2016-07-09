@@ -87,6 +87,7 @@ sudo apt-get -y install  \
 	eclipse \
 	flashplugin-installer fluxgui \
 	git gimp gparted google-chrome-stable \
+	guake guake-indicator \
 	openjdk-8-jdk \
 	picard pitivi python-nautilus \
 	powertop \
@@ -105,13 +106,7 @@ sudo umake android-studio
 ################################################################################
 
 #Only for Gnome
-# gnome-shell --version
-
-echo ""
-echo "===================="
-echo " GNOME 3.20 ONLY!!! "
-echo "===================="
-echo ""
+echo "ONLY FOR GNOME!!!"
 
 #Gnome Shell Extension Installer
 # https://github.com/ianbrunelli/gnome-shell-extension-installer
@@ -119,11 +114,32 @@ wget -O gnome-shell-extension-installer "https://github.com/ianbrunelli/gnome-sh
 chmod +x gnome-shell-extension-installer
 mv gnome-shell-extension-installer /usr/bin/
 
-#topicons plus
-gnome-shell-extension-installer 1031 --yes
+# Removable Drive Menu
+gnome-shell-extension-installer 7 --yes
+
+# Places Status Indicator
+gnome-shell-extension-installer 8 --yes
+
+# Alternate Tab
+gnome-shell-extension-installer 15 --yes
+
+# User Themes
+gnome-shell-extension-installer 19 --yes
+
+# Shellshape
+gnome-shell-extension-installer 294 --yes
+
+#dash to dock
+gnome-shell-extension-installer 307 --yes
+
+# Launch new instance
+gnome-shell-extension-installer 600 --yes
 
 #Imgur Screenshot Uploader
 gnome-shell-extension-installer 683 --yes
+
+# OpenWeather
+gnome-shell-extension-installer 750 --yes
 
 #Battery Percentage
 gnome-shell-extension-installer 818 --yes
@@ -131,11 +147,8 @@ gnome-shell-extension-installer 818 --yes
 # Cpu Power Manager
 gnome-shell-extension-installer 945 --yes
 
-# Shellshape
-gnome-shell-extension-installer 294 --yes
-
-# User Themes
-gnome-shell-extension-installer 19 --yes
+#topicons plus
+gnome-shell-extension-installer 1031 --yes
 
 
 
