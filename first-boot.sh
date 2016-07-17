@@ -3,7 +3,6 @@
 # TODO:
 # AGGIUNGI uso di powertop
 # aggiungi pm-utils e hibernate!
-# riconoscimento automatico gnome version
 
 ################################################################################
 
@@ -27,6 +26,7 @@ echo	Copyright \(C\) 2016 Fabrizio Cirelli
 echo	This program comes with ABSOLUTELY NO WARRANTY
 echo	This is free software, and you are welcome to redistribute it
 echo	under certain conditions
+sleep 3
 ################################################################################
 # TODO aggiungi uso di grub (dopo aver fatto backup)
 
@@ -34,7 +34,10 @@ echo	under certain conditions
 #sudo cp /etc/default/grub /etc/default/grub.old
 
 ################################################################################
-# add repos
+echo ###########################################################################
+echo ADD REPOSITORIES
+echo ###########################################################################
+sleep 3
 
 #atom
 sudo add-apt-repository ppa:webupd8team/atom
@@ -54,7 +57,7 @@ sudo dpkg --add-architecture i386
 sudo add-apt-repository -y "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
 
 #scudcloud / slack
-sudo apt-add-repository -y ppa:rael-gc/scudcloud
+sudo add-apt-repository -y ppa:rael-gc/scudcloud
 
 #picard from musicBrainz
 sudo add-apt-repository -y ppa:musicbrainz-developers/stable
@@ -74,12 +77,20 @@ sudo add-apt-repository ppa:ne0sight/chrome-gnome-shell
 # sudo apt-get remove -y
 
 ################################################################################
-# basic update
+echo ###########################################################################
+echo UPDATE ALL
+echo ###########################################################################
+sleep 3
+
 sudo apt-get -y --force-yes update
 sudo apt-get -y --force-yes upgrade
 
 ###############################################################################
-# install apps
+echo ###########################################################################
+echo INSTALL APPS
+echo ###########################################################################
+sleep 3
+
 sudo apt-get -y install  \
 	atom \
 	chrome-gnome-shell \
@@ -103,10 +114,12 @@ sudo apt-get -y install  \
 
 # android-studio
 sudo umake android-studio
-################################################################################
 
-#Only for Gnome
-echo "ONLY FOR GNOME!!!"
+################################################################################
+echo ###########################################################################
+echo INSTALL EXTENSIONS FOR GNOME
+echo ###########################################################################
+sleep 3
 
 #Gnome Shell Extension Installer
 # https://github.com/ianbrunelli/gnome-shell-extension-installer
@@ -150,8 +163,6 @@ gnome-shell-extension-installer 945 --yes
 #topicons plus
 gnome-shell-extension-installer 1031 --yes
 
-
-
 ################################################################################
 #Start at boot applications
 #touch ~/.config/autostart/scudcloud.desktop
@@ -161,7 +172,10 @@ gnome-shell-extension-installer 1031 --yes
 #echo Type=Application> ~/.config/autostart/scudcloud.desktop
 
 ################################################################################
-# Permanent bash aliases
+echo ###########################################################################
+echo PERMANENT BASH ALIASES
+echo ###########################################################################
+sleep 3
 
 echo "" >> ~/.bashrc
 echo "# Alias" >> ~/.bashrc
@@ -169,13 +183,19 @@ echo "alias meteo='curl http://wttr.in/albino'" >> ~/.bashrc
 
 
 ################################################################################
-# requires clicks
+echo ###########################################################################
+echo INSTALL APPS THAT REQUIRE CLICKS
+echo ###########################################################################
+sleep 3
+
 sudo apt-get install -y ubuntu-restricted-extras
 sudo apt-get install -y steam
 
 ################################################################################
 # prompt for a reboot
 
+echo ""
+echo ""
 echo ""
 echo "===================="
 echo " TIME FOR A REBOOT! "
