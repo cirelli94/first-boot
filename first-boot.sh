@@ -1,8 +1,8 @@
 #!/bin/bash
 ################################################################################
 # TODO:
-# AGGIUNGI uso di powertop
-# aggiungi pm-utils e hibernate!
+# AGGIUNGI uso di powertop?
+# aggiungi pm-utils e hibernate?
 
 ################################################################################
 
@@ -34,6 +34,7 @@ sleep 3
 #sudo cp /etc/default/grub /etc/default/grub.old
 
 ################################################################################
+clear
 echo ###########################################################################
 echo ADD REPOSITORIES
 echo ###########################################################################
@@ -80,6 +81,7 @@ sudo add-apt-repository -y ppa:ne0sight/chrome-gnome-shell
 # sudo apt-get remove -y
 
 ################################################################################
+clear
 echo ###########################################################################
 echo UPDATE ALL
 echo ###########################################################################
@@ -88,13 +90,14 @@ sleep 3
 sudo apt-get -y --force-yes update
 sudo apt-get -y --force-yes upgrade
 
-###############################################################################
+################################################################################
+clear
 echo ###########################################################################
 echo INSTALL APPS
 echo ###########################################################################
 sleep 3
 
-sudo apt-get -y install  \
+for pkg in \
 	atom \
 	chrome-gnome-shell \
 	doxygen doxygen-gui deluge \
@@ -115,10 +118,14 @@ sudo apt-get -y install  \
 	# http://linrunner.de/en/tlp/docs/tlp-linux-advanced-power-management.html
 	tlp tlp-rdw smartmontools ethtool
 
+	do sudo apt-get -y install $pkg
+done
+
 # android-studio
 sudo umake android-studio
 
 ################################################################################
+clear
 echo ###########################################################################
 echo INSTALL EXTENSIONS FOR GNOME
 echo ###########################################################################
@@ -175,6 +182,7 @@ gnome-shell-extension-installer 1031 --yes
 #echo Type=Application> ~/.config/autostart/scudcloud.desktop
 
 ################################################################################
+clear
 echo ###########################################################################
 echo PERMANENT BASH ALIASES
 echo ###########################################################################
@@ -186,6 +194,7 @@ echo "alias meteo='curl http://wttr.in/albino'" >> ~/.bashrc
 
 
 ################################################################################
+clear
 echo ###########################################################################
 echo INSTALL APPS THAT REQUIRE CLICKS
 echo ###########################################################################
@@ -195,7 +204,8 @@ sudo apt-get install -y ubuntu-restricted-extras
 sudo apt-get install -y steam
 
 ################################################################################
-# prompt for a reboot
+clear
+# TODO prompt for a reboot
 
 echo ""
 echo ""
