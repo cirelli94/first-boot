@@ -39,18 +39,21 @@ echo ADD REPOSITORIES
 echo ###########################################################################
 sleep 3
 
+# Needed for add-apt-repository
+sudo apt install software-properties-common
+
 #atom
-sudo add-apt-repository ppa:webupd8team/atom
+sudo add-apt-repository -y ppa:webupd8team/atom
 
 #flux
-sudo add-apt-repository ppa:nathan-renniewaldock/flux
+sudo add-apt-repository -y ppa:nathan-renniewaldock/flux
 
 #google-chrome-stable
 wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo add-apt-repository -y "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
 
 #syncthing-gtk
-sudo add-apt-repository ppa:nilarimogard/webupd8
+sudo add-apt-repository -y ppa:nilarimogard/webupd8
 
 #skype
 sudo dpkg --add-architecture i386
@@ -69,7 +72,7 @@ curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
 echo "deb http://apt.syncthing.net/ syncthing release" | sudo tee /etc/apt/sources.list.d/syncthing.list
 
 # GNOME Shell Integration
-sudo add-apt-repository ppa:ne0sight/chrome-gnome-shell
+sudo add-apt-repository -y ppa:ne0sight/chrome-gnome-shell
 
 
 ################################################################################
