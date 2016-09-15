@@ -193,6 +193,26 @@ echo "" >> ~/.bashrc
 echo "# Alias" >> ~/.bashrc
 echo "alias meteo='curl http://wttr.in/albino'" >> ~/.bashrc
 
+################################################################################
+clear
+echo ###########################################################################
+echo PAGINE DI MAN COLORATE
+echo ###########################################################################
+sleep 3
+
+echo "
+# Pagine di MAN colorate!
+man() {
+env \
+LESS_TERMCAP_mb=$'\e[01;31m' \
+LESS_TERMCAP_md=$'\e[01;31m' \
+LESS_TERMCAP_me=$'\e[0m' \
+LESS_TERMCAP_se=$'\e[0m' \
+LESS_TERMCAP_so=$'\e[01;44;33m' \
+LESS_TERMCAP_ue=$'\e[0m' \
+LESS_TERMCAP_us=$'\e[01;32m' \
+man "$@"
+}" >> ~/.bashrc
 
 ################################################################################
 clear
