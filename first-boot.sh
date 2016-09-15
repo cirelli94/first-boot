@@ -99,7 +99,6 @@ sleep 3
 
 for pkg in \
 	atom \
-	chrome-gnome-shell \
 	doxygen doxygen-gui deluge \
 	eclipse \
 	flashplugin-installer fluxgui \
@@ -109,16 +108,12 @@ for pkg in \
 	picard pitivi python-nautilus \
 	powertop \
 	p7zip p7zip-full p7zip-rar \
-	scudcloud skype syncthing syncthing-gtk\
+	smartmontools scudcloud skype \
+	syncthing syncthing-gtk\
 	umake unetbootin ubuntu-wallpapers*  \
 	variety virtualbox-guest-additions-iso \
 	vlc valgrind \
-	yakuake \
-	# TLP - ADVANCED POWER MANAGEMENT
-	# http://linrunner.de/en/tlp/docs/tlp-linux-advanced-power-management.html
-	tlp tlp-rdw smartmontools ethtool
-
-	do sudo apt-get -y install $pkg
+	do sudo apt-get -y --quiet install $pkg
 done
 
 # android-studio
@@ -130,6 +125,9 @@ echo ###########################################################################
 echo INSTALL EXTENSIONS FOR GNOME
 echo ###########################################################################
 sleep 3
+
+# To manage extension via https://extensions.gnome.org/
+sudo apt-get -y --quiet install 	chrome-gnome-shell
 
 #Gnome Shell Extension Installer
 # https://github.com/ianbrunelli/gnome-shell-extension-installer
@@ -166,6 +164,9 @@ gnome-shell-extension-installer 750 --yes
 
 #Battery Percentage
 gnome-shell-extension-installer 818 --yes
+
+#Dynamic Top Bar
+gnome-shell-extension-installer 885 --yes
 
 # Cpu Power Manager
 gnome-shell-extension-installer 945 --yes
