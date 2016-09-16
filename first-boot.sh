@@ -104,10 +104,12 @@ for pkg in \
 	flashplugin-installer fluxgui \
 	git gimp gparted google-chrome-stable \
 	guake guake-indicator \
+	nvidia-367 \
 	openjdk-8-jdk \
 	picard pitivi python-nautilus \
 	powertop \
 	p7zip p7zip-full p7zip-rar \
+	prime-indicator \	
 	smartmontools scudcloud skype \
 	syncthing syncthing-gtk\
 	umake unetbootin ubuntu-wallpapers*  \
@@ -203,16 +205,18 @@ sleep 3
 echo "
 # Pagine di MAN colorate!
 man() {
-env \
-LESS_TERMCAP_mb=$'\e[01;31m' \
-LESS_TERMCAP_md=$'\e[01;31m' \
-LESS_TERMCAP_me=$'\e[0m' \
-LESS_TERMCAP_se=$'\e[0m' \
-LESS_TERMCAP_so=$'\e[01;44;33m' \
-LESS_TERMCAP_ue=$'\e[0m' \
-LESS_TERMCAP_us=$'\e[01;32m' \
-man "$@"
+env \\
+LESS_TERMCAP_mb=$'\e[01;31m' \\
+LESS_TERMCAP_md=$'\e[01;31m' \\
+LESS_TERMCAP_me=$'\e[0m' \\
+LESS_TERMCAP_se=$'\e[0m' \\
+LESS_TERMCAP_so=$'\e[01;44;33m' \\
+LESS_TERMCAP_ue=$'\e[0m' \\
+LESS_TERMCAP_us=$'\e[01;32m' \\
+man "\$@"
 }" >> ~/.bashrc
+
+source ~/.bashrc
 
 ################################################################################
 clear
