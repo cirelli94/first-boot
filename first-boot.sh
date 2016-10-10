@@ -3,6 +3,10 @@
 # TODO:
 # AGGIUNGI uso di powertop?
 # aggiungi pm-utils e hibernate?
+# aggiungi uso di grub (dopo aver fatto backup)
+# copy actual version of grub file configuration
+#sudo cp /etc/default/grub /etc/default/grub.old
+#
 
 ################################################################################
 
@@ -27,11 +31,8 @@ echo	This program comes with ABSOLUTELY NO WARRANTY
 echo	This is free software, and you are welcome to redistribute it
 echo	under certain conditions
 sleep 3
-################################################################################
-# TODO aggiungi uso di grub (dopo aver fatto backup)
 
-# copy actual version of grub file configuration
-#sudo cp /etc/default/grub /etc/default/grub.old
+
 
 ################################################################################
 clear
@@ -41,7 +42,7 @@ echo ###########################################################################
 sleep 3
 
 # Needed for add-apt-repository
-sudo apt install software-properties-common
+sudo apt-get -y --quiet install software-properties-common
 
 #atom
 sudo add-apt-repository -y ppa:webupd8team/atom
@@ -52,6 +53,9 @@ sudo add-apt-repository -y ppa:nathan-renniewaldock/flux
 #google-chrome-stable
 wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo add-apt-repository -y "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
+
+#nvidia drivers
+sudo add-apt-repository -y ppa:graphics-drivers/ppa
 
 #syncthing-gtk
 sudo add-apt-repository -y ppa:nilarimogard/webupd8
@@ -104,7 +108,7 @@ for pkg in \
 	flashplugin-installer fluxgui \
 	git gimp gparted google-chrome-stable \
 	guake guake-indicator \
-	nvidia-367 \
+	nvidia-370 \
 	openjdk-8-jdk \
 	picard pitivi python-nautilus \
 	powertop \
@@ -114,8 +118,9 @@ for pkg in \
 	syncthing syncthing-gtk\
 	umake unetbootin ubuntu-wallpapers*  \
 	variety virtualbox-guest-additions-iso \
-	vlc valgrind \
-	do sudo apt-get -y --quiet install $pkg
+	vlc valgrind
+do
+	sudo apt-get -y --quiet install $pkg
 done
 
 # android-studio
@@ -163,7 +168,6 @@ gnome-shell-extension-installer 683 --yes
 
 # OpenWeather
 gnome-shell-extension-installer 750 --yes
-
 
 #Battery Status
 gnome-shell-extension-installer 817 --yes
