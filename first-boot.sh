@@ -116,7 +116,7 @@ for pkg in \
 	prime-indicator \
 	smartmontools scudcloud skype \
 	syncthing syncthing-gtk\
-	umake unetbootin ubuntu-wallpapers*  \
+	umake unetbootin \
 	variety virtualbox-guest-additions-iso \
 	vlc valgrind
 do
@@ -226,6 +226,19 @@ man "\$@"
 }" >> ~/.bashrc
 
 source ~/.bashrc
+
+################################################################################
+clear
+echo ###########################################################################
+echo CHANGE SWAPPINESS (FOR SSD ONLY!)
+echo ###########################################################################
+sleep 3
+
+echo "Actual swappiness value:"
+cat /proc/sys/vm/swappiness
+echo "vm.swappiness = 0" | sudo tee -a /etc/sysctl.conf
+echo "Value changed in:"
+cat /proc/sys/vm/swappiness
 
 ################################################################################
 clear
