@@ -109,7 +109,7 @@ for pkg in \
 	picard pitivi python-nautilus \
 	powertop \
 	p7zip p7zip-full p7zip-rar \
-	prime-indicator \	
+	prime-indicator \
 	smartmontools scudcloud skype \
 	syncthing syncthing-gtk\
 	umake unetbootin ubuntu-wallpapers*  \
@@ -129,7 +129,7 @@ echo ###########################################################################
 sleep 3
 
 # To manage extension via https://extensions.gnome.org/
-sudo apt-get -y --quiet install 	chrome-gnome-shell
+sudo apt-get -y --quiet install chrome-gnome-shell
 
 #Gnome Shell Extension Installer
 # https://github.com/ianbrunelli/gnome-shell-extension-installer
@@ -164,8 +164,9 @@ gnome-shell-extension-installer 683 --yes
 # OpenWeather
 gnome-shell-extension-installer 750 --yes
 
-#Battery Percentage
-gnome-shell-extension-installer 818 --yes
+
+#Battery Status
+gnome-shell-extension-installer 817 --yes
 
 #Dynamic Top Bar
 gnome-shell-extension-installer 885 --yes
@@ -194,6 +195,10 @@ sleep 3
 echo "" >> ~/.bashrc
 echo "# Alias" >> ~/.bashrc
 echo "alias meteo='curl http://wttr.in/albino'" >> ~/.bashrc
+
+echo "" >> ~/.bashrc
+echo "alias python='python3'" >> ~/.bashrc
+
 
 ################################################################################
 clear
