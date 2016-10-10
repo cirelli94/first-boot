@@ -116,10 +116,13 @@ for pkg in \
 	prime-indicator \
 	smartmontools scudcloud skype \
 	syncthing syncthing-gtk\
-	umake unetbootin \
+	ubuntu-make unetbootin \
 	variety virtualbox-guest-additions-iso \
 	vlc valgrind
 do
+	echo ""
+	echo $pkg
+	echo ""
 	sudo apt-get -y --quiet install $pkg
 done
 
