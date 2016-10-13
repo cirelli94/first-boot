@@ -115,8 +115,9 @@ for pkg in \
 	p7zip p7zip-full p7zip-rar \
 	prime-indicator \
 	smartmontools scudcloud skype \
-	syncthing syncthing-gtk\
-	ubuntu-make unetbootin \
+	syncthing syncthing-gtk steam\
+	ubuntu-make ubuntu-restricted-extras \
+	unetbootin \
 	variety virtualbox-guest-additions-iso \
 	vlc valgrind
 do
@@ -214,8 +215,8 @@ echo PAGINE DI MAN COLORATE
 echo ###########################################################################
 sleep 3
 
-echo "
 # Pagine di MAN colorate!
+echo "
 man() {
 env \\
 LESS_TERMCAP_mb=$'\e[01;31m' \\
@@ -233,7 +234,7 @@ source ~/.bashrc
 ################################################################################
 clear
 echo ###########################################################################
-echo CHANGE SWAPPINESS (FOR SSD ONLY!)
+echo CHANGE SWAPPINESS FOR SSD ONLY
 echo ###########################################################################
 sleep 3
 
@@ -242,16 +243,6 @@ cat /proc/sys/vm/swappiness
 echo "vm.swappiness = 0" | sudo tee -a /etc/sysctl.conf
 echo "Value changed in:"
 cat /proc/sys/vm/swappiness
-
-################################################################################
-clear
-echo ###########################################################################
-echo INSTALL APPS THAT REQUIRE CLICKS
-echo ###########################################################################
-sleep 3
-
-sudo apt-get install -y ubuntu-restricted-extras
-sudo apt-get install -y steam
 
 ################################################################################
 clear
