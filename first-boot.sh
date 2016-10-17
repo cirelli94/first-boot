@@ -43,12 +43,16 @@ sleep 3
 
 # Needed for add-apt-repository
 sudo apt-get -y --quiet install software-properties-common
+sudo apt-get -y --quiet install curl
 
 #atom
 sudo add-apt-repository -y ppa:webupd8team/atom
 
 #flux
 sudo add-apt-repository -y ppa:nathan-renniewaldock/flux
+
+#gnome3!
+sudo add-apt-repository -y ppa:gnome3-team/gnome3
 
 #google-chrome-stable
 wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
@@ -91,8 +95,8 @@ echo UPDATE ALL
 echo ###########################################################################
 sleep 3
 
-sudo apt-get -y --force-yes update
-sudo apt-get -y --force-yes upgrade
+sudo apt-get -y --assume-yes update
+sudo apt-get -y --assume-yes upgrade
 
 ################################################################################
 clear
