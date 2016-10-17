@@ -112,14 +112,13 @@ for pkg in \
 	flashplugin-installer fluxgui \
 	git gimp gparted google-chrome-stable \
 	guake guake-indicator \
-	nvidia-370 \
 	openjdk-8-jdk \
 	picard pitivi python-nautilus \
 	powertop \
 	p7zip p7zip-full p7zip-rar \
 	prime-indicator \
 	smartmontools scudcloud skype \
-	syncthing syncthing-gtk steam\
+	syncthing syncthing-gtk \
 	ubuntu-make ubuntu-restricted-extras \
 	unetbootin \
 	variety virtualbox-guest-additions-iso \
@@ -190,14 +189,6 @@ gnome-shell-extension-installer 945 --yes
 gnome-shell-extension-installer 1031 --yes
 
 ################################################################################
-#Start at boot applications
-#touch ~/.config/autostart/scudcloud.desktop
-#echo [Desktop Entry] > ~/.config/autostart/scudcloud.desktop
-#echo Name=scudcloud > ~/.config/autostart/scudcloud.desktop
-#echo Exec=scudcloud --minimize MINIMIZE > ~/.config/autostart/scudcloud.desktop
-#echo Type=Application> ~/.config/autostart/scudcloud.desktop
-
-################################################################################
 clear
 echo ###########################################################################
 echo PERMANENT BASH ALIASES
@@ -249,8 +240,17 @@ echo "Value changed in:"
 cat /proc/sys/vm/swappiness
 
 ################################################################################
+# Necessitano intervento!
 clear
-# TODO prompt for a reboot
+for pkg in \
+	steam \
+	nvidia-370 \ #ricordati: lightdm! gdm3 bug: https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1559576
+do
+	echo ""
+	echo $pkg
+	echo ""
+	sudo apt-get -y --quiet install $pkg
+done
 
 echo ""
 echo ""
