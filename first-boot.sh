@@ -107,6 +107,7 @@ sleep 3
 
 for pkg in \
 	atom \
+	cpufrequtils \
 	doxygen doxygen-gui deluge \
 	eclipse \
 	flashplugin-installer fluxgui \
