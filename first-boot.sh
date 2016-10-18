@@ -123,7 +123,8 @@ for pkg in \
 	ubuntu-make ubuntu-restricted-extras \
 	unetbootin \
 	variety virtualbox-guest-additions-iso \
-	vlc valgrind
+	vlc valgrind \
+	xbacklight \
 do
 	echo ""
 	echo $pkg
