@@ -11,7 +11,7 @@ while true; do
 	echo ""
 	echo "cpufreq-set " && date "+%H:%M"
 	echo ""
-	sudo cpufreq-set -r --max 1500MHz
+	sudo cpufreq-set -r --max 800MHz
 	sudo cpufreq-set -r -g powersave
 	sleep 300
 done
