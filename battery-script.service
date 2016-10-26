@@ -1,0 +1,9 @@
+[Unit]
+
+
+[Service]
+ExecStart=/usr/local/bin/battery-script.sh
+
+[Install]
+WantedBy=default.target
+
