@@ -1,20 +1,19 @@
 #!/bin/bash
 echo "START BatteryScript"
-echo ""
 
 sudo powertop --auto-tune && echo "set powertop --auto-tune"
 
-xbacklight -set 40 && echo "set xbackglight"
+xbacklight -set 40 && echo "set xbacklight"
 
-sleep 60
+#sleep 60
 
 # This set cpufreq and governor every 5 minutes
 while true; do
-	echo ""
 	echo "cpufreq-set " && date "+%H:%M"
-	echo ""
-	sudo cpufreq-set -c 0-7 -u 800MHz -g powersave
+	for numcpu in 0 1 2 3 4 5 6 7
+ 	do
+		sudo cpufreq-set -c $numcpu -u 800MHz -g powersave
+	done
 	sleep 300
 done
-echo ""
 echo "STOP BatterScript"
