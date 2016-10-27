@@ -108,7 +108,7 @@ sleep 3
 for pkg in \
 	atom \
 	cpufrequtils \
-	doxygen doxygen-gui deluge \
+	doxygen doxygen-gui deluge dnsmasq \
 	eclipse \
 	flashplugin-installer fluxgui \
 	git gimp gparted google-chrome-stable \
@@ -120,6 +120,7 @@ for pkg in \
 	prime-indicator \
 	smartmontools scudcloud skype \
 	syncthing syncthing-gtk \
+	tlp \
 	ubuntu-make ubuntu-restricted-extras \
 	unetbootin \
 	variety virtualbox-guest-additions-iso \
