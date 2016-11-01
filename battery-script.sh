@@ -1,11 +1,19 @@
 #!/bin/bash
-echo "START BatteryScript"
-
-sudo powertop --auto-tune && echo "set powertop --auto-tune"
-
-xbacklight -set 40 && echo "set xbacklight"
-
-#sleep 60
+sleep 60
+capacity=`cat /sys/class/power_supply/BAT0/capacity`
+if [ $capacity -le 100 ]
+then
+	# If there is battery...
+	notify-send "START BatteryScript"
+	sudo powertop --auto-tune && echo "set powertop --auto-tune"
+	xbacklight -set 40 && echo "set xbacklight"
+else
+	# if there's no battery
+	echo "AC"
+	notify-send "No battery, full power mode!"
+	skype &
+	deluge-gtk &
+fi
 
 # This set cpufreq and governor every 5 minutes
 while true; do
