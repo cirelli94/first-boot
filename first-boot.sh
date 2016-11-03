@@ -125,7 +125,7 @@ for pkg in \
 	unetbootin \
 	variety virtualbox-guest-additions-iso \
 	vlc valgrind \
-	xbacklight \
+	xbacklight ;
 do
 	echo ""
 	echo $pkg
