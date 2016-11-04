@@ -107,7 +107,7 @@ sleep 3
 
 for pkg in \
 	atom \
-	cpufrequtils \
+	cpufrequtils chrome-gnome-shell \
 	doxygen doxygen-gui deluge dnsmasq \
 	eclipse \
 	flashplugin-installer fluxgui \
