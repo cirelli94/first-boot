@@ -2,7 +2,8 @@
 
 
 [Service]
-ExecStart=/usr/local/bin/battery-script.sh
+ExecStart=/usr/local/bin/battery.sh
+ExecStop=/usr/local/bin/battery-stop.sh
 
 [Install]
 WantedBy=default.target
