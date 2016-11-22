@@ -23,21 +23,3 @@ else
 	skypeforlinux &
 	deluge-gtk &
 fi
-
-# This set cpufreq and governor every 5 minutes
-while true; do
-	CHARGING=`cat /sys/class/power_supply/AC0/online`
-	if [ $CHARGING == 0 ]
-	then
-		# DISCHARGING
-		echo "cpufreq-set 800MHz powersave to all cpus"
-		for numcpu in {0..7}
-		do
-			sudo cpufreq-set -c $numcpu -u 800MHz -g powersave
-		done
-	else
-		# CHARGING
-		echo "AC"
-	fi
-	sleep 300
-done
