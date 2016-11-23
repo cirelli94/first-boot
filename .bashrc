@@ -119,6 +119,7 @@ fi
 # Alias
 alias meteo='curl http://wttr.in/albino'
 alias eclipse=~/eclipse/java-neon/eclipse/eclipse
+alias sshpi='ssh -X pi@cirelli94.ddns.net'
 
 #alias python='python3'
 
