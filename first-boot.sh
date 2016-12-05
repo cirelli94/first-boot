@@ -2,11 +2,10 @@
 ################################################################################
 # TODO:
 # AGGIUNGI uso di powertop?
-# aggiungi pm-utils e hibernate?
 # aggiungi uso di grub (dopo aver fatto backup)
 # copy actual version of grub file configuration
 #sudo cp /etc/default/grub /etc/default/grub.old
-#
+# Imposta e attiva battery scripts e service
 
 ################################################################################
 
@@ -238,9 +237,10 @@ sleep 3
 
 echo "Actual swappiness value:"
 cat /proc/sys/vm/swappiness
-echo "vm.swappiness = 0" | sudo tee -a /etc/sysctl.conf
+echo "vm.swappiness = 10" | sudo tee -a /etc/sysctl.conf
 echo "Value changed in:"
 cat /proc/sys/vm/swappiness
+sleep 10
 
 ################################################################################
 # Necessitano intervento!

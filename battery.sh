@@ -1,5 +1,5 @@
 #!/bin/bash
-# This file should be placed in /usr/local/bin
+# This file should be placed in /usr/local/bin/
 
 #check if you run the script as root
 if [ "$(whoami)" != "root" ]; then
