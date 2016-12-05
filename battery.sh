@@ -1,11 +1,5 @@
 #!/bin/bash
-# TODO add xbacklight
-# 	xbacklight -set 30 && echo "set xbacklight"
-
-DISPLAY=:0.0
-HOME=/home/cirelli/
-XAUTHORITY=$HOME/.Xauthority
-export DISPLAY XAUTHORITY HOME
+# This file should be placed in /usr/local/bin
 
 #check if you run the script as root
 if [ "$(whoami)" != "root" ]; then
@@ -18,8 +12,9 @@ if [ $CHARGING == 0 ]
 then
 	# DISCHARGING
 	sudo powertop --auto-tune && echo "set powertop --auto-tune"
+	su -l cirelli -c xbacklight -set 30 && echo "set xbacklight"
 else
 	# CHARGING
-	skypeforlinux &
-	deluge-gtk &
+	su -l cirelli -c skypeforlinux &
+	su -l cirelli -c deluge-gtk &
 fi
