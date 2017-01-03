@@ -88,9 +88,10 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -hlGF'
-alias la='ls -ahlGF'
-alias l='ls -CF1'
+alias ll='ls -hlGF --group-directories-first'
+alias lr='ls -hlGFR --group-directories-first'
+alias la='ls -ahlGF --group-directories-first'
+alias l='ls -CF1h --group-directories-first'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -116,13 +117,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Alias
-alias meteo='curl http://wttr.in/albino'
-alias eclipse=~/eclipse/java-neon/eclipse/eclipse
-alias sshpi='ssh -X pi@cirelli94.ddns.net'
-
-#alias python='python3'
-
 # Pagine di MAN colorate!
 man() {
 env \
@@ -139,3 +133,12 @@ man $@
 # Save each command immediately after its execution, for multi-terminal use simultaneously
 shopt -s histappend
 PROMPT_COMMAND='history -a'
+
+# My Aliases
+alias meteo='curl http://wttr.in/albino'
+alias eclipse=~/eclipse/java-neon/eclipse/eclipse
+alias sshpi='ssh -Y pi@cirelli94.ddns.net -p 5001'
+
+#alias python='python3'
+shopt -s autocd
+complete -cf sudo
